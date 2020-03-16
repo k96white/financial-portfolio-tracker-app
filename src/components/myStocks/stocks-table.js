@@ -45,8 +45,9 @@ class MyStocksTable extends Component{
                                     <td>{item.buy_price}</td>
                                     <td>{item.currentPrice}</td>
                                     <td>{item.profitLoss}</td>
-                                    <td><button type='button' className='StopTrackingBtn btn btn-danger btn-small' id="stopTrack" 
-                                               value={item.stockSymbol}        onClick={this.stopTracking}>Stop Tracking</button></td>
+                                    <td><button type='button' className='StopTrackingBtn' 
+                                          style={{backgroundColor:"red",color:"white",height:"10px",textAlign:"center",paddingTop:"2px"}}
+                                             id="stopTrack" value={item.stockSymbol}        onClick={this.stopTracking}>Stop Tracking</button></td>
                                 </tr>
                          
                 )

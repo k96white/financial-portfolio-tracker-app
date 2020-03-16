@@ -39,7 +39,7 @@ class StockButton extends Component{
         event.preventDefault();
       let  val = event.target.value;  //symbol is collected here
       let stockName = event.target.name; //stockname is taken here
-       console.log(event.target);
+       console.log(event.target.value);
  
        axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${val}&apikey=${this.state.apiKey}`)
        .then(res =>{
@@ -52,7 +52,7 @@ class StockButton extends Component{
                     currentPrice : latestData["4. close"]
                 })
                 this.props.currentPrice(val,stockName,this.state.currentPrice,true);
-       })
+       }).catch(error => console.log(error))
     }
 
     render(){
@@ -72,7 +72,10 @@ class StockButton extends Component{
            
                if(!hideButton || showButton){  
                 return <li key={i.symbol}>
-                            <button type='button' id='stock-btn' name={i.name} className='StockButton btn btn-primary' onClick={this.selectStock} value={i.symbol}>{i.symbol}</button>
+                            <button type='button' id='stock-btn' name={i.name} 
+                                 style={{backgroundColor:"#FF00FF",color:"white",
+                                    height:"30px",textAlign:"center",paddingTop:"2px"}} className='StockButton' 
+                                         onClick={this.selectStock} value={i.symbol}>{i.symbol}</button>
                                <span> <strong>{i.name}</strong></span></li>
               }  
               else

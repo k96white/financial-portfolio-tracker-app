@@ -90,8 +90,8 @@ class Modal extends Component{
                             
                         </form>
                        
-                        <button type='button' className='AddButton btn btn-primary btn-sm' id='addForm' onClick={this.addStock}>Add</button>
-                       <button type="button" className='btn btn-danger btn-sm' id="closeBtn" onClick={this.closeModal}>Close</button><br/><br/>
+                        <button type='button' className='AddButton' style={{backgroundColor:"yellow",height:"10px",textAlign:"center",paddingTop:"2px"}} id='addForm' onClick={this.addStock}><strong>Add</strong></button>
+                       <button type="button" className='closeButton' style={{backgroundColor:"red",height:"10px",textAlign:"center",paddingTop:"2px",color:"white"}} id="closeBtn" onClick={this.closeModal}>Close</button><br/><br/>
                        <div id="errorMsg"></div>
                  </div>
             </div>
