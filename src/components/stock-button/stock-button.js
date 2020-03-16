@@ -72,7 +72,7 @@ class StockButton extends Component{
            
                if(!hideButton || showButton){  
                 return <li key={i.symbol}>
-                            <button type='button' id='stock-btn' name={i.name} className='btn btn-primary' onClick={this.selectStock} value={i.symbol}>{i.symbol}</button>
+                            <button type='button' id='stock-btn' name={i.name} className='StockButton btn btn-primary' onClick={this.selectStock} value={i.symbol}>{i.symbol}</button>
                                <span> <strong>{i.name}</strong></span></li>
               }  
               else
@@ -89,7 +89,7 @@ class StockButton extends Component{
         return(
             <div className='container'>
                 <h3>Add stocks to my stocks</h3>
-                <ul className='buttonList'>
+                <ul className='StockButton buttonList'>
                      {showStock}
                 </ul>
                 <div>{showMessage}</div>
