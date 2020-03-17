@@ -76,17 +76,17 @@ class Modal extends Component{
                         boxSizing: 'border-box', width: '70%', borderRadius:'10px'}}>
                         <h2>Add {this.props.stockName} to My Stocks</h2>  <br/><br/>  
                         <form>
-                            <strong>Company Name</strong> : <strong>{this.props.stockName}</strong><br/><br/>
-                            <label>
-                                <strong>No. of Shares</strong> : <input id='noShares' type='number' placeholder='No. of Shares'
+                            <label htmlFor='name'> <strong>Company Name</strong></label> : <strong>{this.props.stockName}</strong><br/><br/>
+                            
+                            <label htmlFor="name"><strong>No. of Shares</strong></label> : <input id='noShares' type='number' placeholder='No. of Shares'
                                     name='no_of_shares'   onChange={this.handleInput}></input>
                                 <br/><br/>
-                                <strong>Buy Price</strong> : <input type="number" id='buyPrice' placeholder='Buying Price'
+                            <label htmlFor="name"><strong>Buy Price</strong></label> : <input type="number" id='buyPrice' placeholder='Buying Price'
                                     name='buy-price'    onChange={this.handleInput}></input>
                                 <br/><br/>
-                                <strong>Buy Date</strong> : <input type='Date' id='buyDate' name='date'
+                            <label htmlFor="name"><strong>Buy Date</strong></label> : <input type='Date' id='buyDate' name='date'
                                     onChange={this.handleInput}></input>
-                            </label><br/><br/>
+                            <br/><br/>
                             
                         </form>
                        

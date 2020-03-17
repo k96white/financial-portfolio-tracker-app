@@ -92,7 +92,7 @@ class StockButton extends Component{
         return(
             <div className='container'>
                 <h3>Add stocks to my stocks</h3>
-                <ul className='StockButton buttonList'>
+                <ul className='buttonList'>
                      {showStock}
                 </ul>
                 <div>{showMessage}</div>

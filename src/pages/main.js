@@ -33,7 +33,8 @@ class Main extends Component{
              showModal : modalFlag ,
              stockName : stockName,
              isSelected: false ,
-             symbolValue : value 
+             symbolValue : value ,
+             hidebuttonList : []
          })
     }
     
@@ -61,7 +62,7 @@ class Main extends Component{
                 removedStock: removedStock
             });
             this.state.hidebuttonList.push(removedStock);
-            
+        
     }
     componentDidMount(){
         var d = new Date();
