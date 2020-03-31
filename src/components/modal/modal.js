@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './modal.css';
 import Backdrop from './backdrop/backdrop';
+import axios from 'axios';
 
 class Modal extends Component{
 
@@ -23,7 +24,7 @@ class Modal extends Component{
           this.props.closeModal(false);
     }
     addStock = () =>{
-        console.log(this.state.buy_price);
+       
         // to handle empty input fields 
         if(document.getElementById("noShares").value==='' || document.getElementById("buyPrice").value===''
             || document.getElementById("buyDate").value===''){
@@ -31,7 +32,22 @@ class Modal extends Component{
         
         }
         else{
+  
             let profitLoss = (this.props.currentPrice-this.state.buy_price)*this.state.no_of_shares;
+            axios.post('https://burger-app-8f654.firebaseio.com/addStock.json',{
+                symbol: this.props.stockSymbol,
+                name: this.props.stockName ,
+                share: this.state.no_of_shares ,
+                buyprice: this.state.buy_price,
+                date: this.state.date,
+                currentPrice : this.props.currentPrice,
+                profitLoss : profitLoss
+            })
+            
+            console.log(this.props.stockKey);
+            axios.delete(`https://burger-app-8f654.firebaseio.com/companyStock/${this.props.stockKey}.json`);
+
+            
             let data={ 
                 shareCount : this.state.no_of_shares,
                 buy_price :this.state.buy_price ,
